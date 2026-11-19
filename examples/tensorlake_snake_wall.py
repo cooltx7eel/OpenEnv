@@ -8,7 +8,8 @@ in the browser. Each tile shows how long its sandbox took to become ready.
 Register the sandbox image first. The Dockerfile copies its build context, so
 build from a copy of the env with the Dockerfile at the top level:
 
-    cp -r envs/snake_env /tmp/snake-env && cp /tmp/snake-env/server/Dockerfile /tmp/snake-env/
+    rm -rf /tmp/snake-env && cp -r envs/snake_env /tmp/snake-env
+    cp /tmp/snake-env/server/Dockerfile /tmp/snake-env/
     cd /tmp/snake-env && tl sbx image create Dockerfile -n snake-env
 
 Usage:
